@@ -1,0 +1,29 @@
+# LPTNet Configuration for GF1 Dataset
+name: LPTNet_GF1
+
+model:
+  ms_chans: 4
+  dim: 32
+  num_tokens: 256
+  num_blocks: [1, 1, 1, 1]
+  isFR: false
+  need_interpolate: true
+
+data:
+  train_root: ./data/GF1/train
+  val_root: ./data/GF1/val
+  test_rr_root: ./data/GF1/test_rr
+  test_fr_root: ./data/GF1/test_fr
+  batch_size: 4
+  num_workers: 4
+  img_range: 1023
+  lr_size: 64
+  sensor: GF1
+
+training:
+  epochs: 600
+  lr: 0.0001
+  scheduler_step: 300
+  scheduler_gamma: 0.99
+  val_every: 1
+  save_every: 50

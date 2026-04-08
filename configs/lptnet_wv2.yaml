@@ -1,0 +1,29 @@
+# LPTNet Configuration for WorldView-2 Dataset
+name: LPTNet_WV2
+
+model:
+  ms_chans: 8
+  dim: 32
+  num_tokens: 256
+  num_blocks: [1, 1, 1, 1]
+  isFR: false
+  need_interpolate: true
+
+data:
+  train_root: ./data/WV2/train
+  val_root: ./data/WV2/val
+  test_rr_root: ./data/WV2/test_rr
+  test_fr_root: ./data/WV2/test_fr
+  batch_size: 4
+  num_workers: 4
+  img_range: 2047
+  lr_size: 64
+  sensor: WV2
+
+training:
+  epochs: 600
+  lr: 0.0001
+  scheduler_step: 300
+  scheduler_gamma: 0.99
+  val_every: 1
+  save_every: 50
